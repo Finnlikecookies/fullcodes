@@ -75,6 +75,16 @@
       // the canvas DOM size and WebGL render target sizes yourself.
       // config.matchWebGLToCanvasSize = false;
 window.addEventListener('resize', event => {
+          if((window.innerWidth / 16) * 9 > window.innerHeight)
+          {
+              canvas.style.width = (window.innerHeight / 9) * 16 + "px";
+              canvas.style.height = window.innerHeight + "px";
+          }
+          else
+          {
+              canvas.style.width = window.innerWidth + "px";
+              canvas.style.height = (window.innerWidth / 16) * 9 + "px";
+          }
   console.log(event);
 })
       if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
