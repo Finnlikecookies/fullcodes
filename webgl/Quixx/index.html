@@ -75,19 +75,9 @@
       // happening inside the engine, and you would instead like to size up
       // the canvas DOM size and WebGL render target sizes yourself.
       // config.matchWebGLToCanvasSize = false;
-		window.addEventListener('resize', function(event){
-    var newWidth = window.innerWidth;
-    var newHeight = window.innerHeight; 
-	          if((window.innerWidth / 16) * 9 > window.innerHeight)
-          {
-              canvas.style.width = (window.innerHeight / 9) * 16 + "px";
-              canvas.style.height = window.innerHeight + "px";
-          }
-          else
-          {
-              canvas.style.width = window.innerWidth + "px";
-              canvas.style.height = (window.innerWidth / 16) * 9 + "px";
-          }
+	$(window).resize(function() {
+  /* Do stuff */
+  console.log('window was resized');
 });
       if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
         // Mobile device style: fill the whole browser client area with the game canvas:
